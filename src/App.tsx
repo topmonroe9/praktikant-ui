@@ -167,6 +167,60 @@ function Navbar() {
 }
 
 /* ════════════════════════════════════════════════════════════════
+   Profession rotator
+   ════════════════════════════════════════════════════════════════ */
+
+const professions = [
+  "психологов",
+  "юристов",
+  "коучей",
+  "нутрициологов",
+  "репетиторов",
+  "логопедов",
+  "дефектологов",
+  "консультантов",
+  "супервизоров",
+  "менторов",
+  "тьюторов",
+  "нейропсихологов",
+];
+
+function ProfessionRotator() {
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  useEffect(() => {
+    if (paused) return;
+    const timer = setInterval(() => {
+      setActive((i) => (i + 1) % professions.length);
+    }, 2200);
+    return () => clearInterval(timer);
+  }, [paused]);
+
+  return (
+    <div className="flex flex-wrap gap-x-1 gap-y-1 mt-2.5">
+      {professions.map((p, i) => (
+        <span
+          key={p}
+          onMouseEnter={() => {
+            setActive(i);
+            setPaused(true);
+          }}
+          onMouseLeave={() => setPaused(false)}
+          className={`font-body text-[13px] sm:text-[14px] px-2.5 py-[3px] rounded-[4px] transition-all duration-500 cursor-default select-none ${
+            i === active
+              ? "bg-teal/10 text-teal font-medium scale-[1.05]"
+              : "text-warm-gray hover:text-ink-muted"
+          }`}
+        >
+          {p}
+        </span>
+      ))}
+    </div>
+  );
+}
+
+/* ════════════════════════════════════════════════════════════════
    Hero
    ════════════════════════════════════════════════════════════════ */
 
@@ -218,10 +272,13 @@ function Hero() {
         {/* Left — text */}
         <div>
           <Reveal>
-            <p className="font-mono text-[12px] text-teal tracking-[0.1em] uppercase mb-6 flex items-center gap-2.5">
-              <BrandDot size={5} className="bg-teal" />
-              Рабочая среда для частного практика
-            </p>
+            <div className="mb-6">
+              <p className="font-mono text-[12px] text-teal tracking-[0.1em] uppercase flex items-center gap-2.5">
+                <BrandDot size={5} className="bg-teal" />
+                Рабочая среда для
+              </p>
+              <ProfessionRotator />
+            </div>
           </Reveal>
 
           <Reveal delay={0.1}>
@@ -1039,7 +1096,7 @@ function Footer() {
           <div>
             <Logo />
             <p className="font-body text-[13px] text-warm-gray mt-4 max-w-[260px] leading-relaxed">
-              Рабочая среда для частного практика.
+              Рабочая среда для частных практиков.
               <br />
               Расписание, заметки, оплата, аналитика.
             </p>
