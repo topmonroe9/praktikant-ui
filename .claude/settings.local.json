@@ -4,7 +4,10 @@
       "Bash(node -e \"const d=require\\(''fs''\\).readFileSync\\(''/dev/stdin'',''utf8''\\); const j=JSON.parse\\(d\\); console.log\\(JSON.stringify\\(j.mcpServers||{},null,2\\)\\)\")",
       "Bash(claude mcp:*)",
       "Bash(npm create:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(gh api:*)",
+      "Bash(npm run:*)",
+      "Bash(git:*)"
     ]
   }
 }
