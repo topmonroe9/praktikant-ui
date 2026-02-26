@@ -83,15 +83,26 @@ function Laptop({
       <RoundedBox args={[1.6, 0.06, 1.1]} radius={0.02} position={[0, 0.03, 0]}>
         <meshStandardMaterial color="#B0B0B0" roughness={0.3} metalness={0.6} />
       </RoundedBox>
-      {/* Keyboard area */}
-      <mesh position={[0, 0.065, 0.05]}>
-        <boxGeometry args={[1.3, 0.005, 0.6]} />
-        <meshStandardMaterial color="#888" roughness={0.5} metalness={0.3} />
+      {/* Keyboard recess */}
+      <mesh position={[0, 0.062, -0.05]}>
+        <boxGeometry args={[1.3, 0.003, 0.55]} />
+        <meshStandardMaterial color="#7A7A7A" roughness={0.6} metalness={0.3} />
       </mesh>
+      {/* Key rows */}
+      {[0, 1, 2, 3, 4].map((row) => (
+        <group key={row} position={[0, 0.064, -0.28 + row * 0.1]}>
+          {Array.from({ length: 12 }).map((_, col) => (
+            <mesh key={col} position={[-0.55 + col * 0.1, 0, 0]}>
+              <boxGeometry args={[0.08, 0.004, 0.07]} />
+              <meshStandardMaterial color="#6B6B6B" roughness={0.5} metalness={0.3} />
+            </mesh>
+          ))}
+        </group>
+      ))}
       {/* Trackpad */}
-      <mesh position={[0, 0.065, 0.38]}>
-        <boxGeometry args={[0.5, 0.005, 0.25]} />
-        <meshStandardMaterial color="#999" roughness={0.4} metalness={0.3} />
+      <mesh position={[0, 0.063, 0.35]}>
+        <boxGeometry args={[0.4, 0.002, 0.22]} />
+        <meshStandardMaterial color="#A0A0A0" roughness={0.3} metalness={0.4} />
       </mesh>
       {/* Screen (hinged) */}
       <group ref={screenRef} position={[0, 0.06, -0.55]} rotation={[-0.25, 0, 0]}>
@@ -527,11 +538,34 @@ function Notebook() {
         <boxGeometry args={[0.47, 0.02, 0.62]} />
         <meshStandardMaterial color={C.warmWhite} roughness={0.9} />
       </mesh>
-      {/* Pen */}
-      <mesh position={[0.3, 0.05, 0.1]} rotation={[0, 0.3, Math.PI / 2]}>
-        <cylinderGeometry args={[0.015, 0.015, 0.45, 8]} />
-        <meshStandardMaterial color={C.coral} roughness={0.4} metalness={0.2} />
-      </mesh>
+      {/* Pencil */}
+      <group position={[0.3, 0.04, 0.1]} rotation={[0, 0.3, 0]}>
+        {/* Body — hexagonal */}
+        <mesh rotation={[0, 0, Math.PI / 2]}>
+          <cylinderGeometry args={[0.012, 0.012, 0.35, 6]} />
+          <meshStandardMaterial color="#E8C840" roughness={0.5} />
+        </mesh>
+        {/* Graphite tip — cone */}
+        <mesh position={[0.2, 0, 0]} rotation={[0, 0, -Math.PI / 2]}>
+          <coneGeometry args={[0.012, 0.05, 6]} />
+          <meshStandardMaterial color="#C4A852" roughness={0.6} />
+        </mesh>
+        {/* Graphite point */}
+        <mesh position={[0.24, 0, 0]} rotation={[0, 0, -Math.PI / 2]}>
+          <coneGeometry args={[0.004, 0.02, 8]} />
+          <meshStandardMaterial color="#333" roughness={0.3} />
+        </mesh>
+        {/* Metal ferrule */}
+        <mesh position={[-0.185, 0, 0]} rotation={[0, 0, Math.PI / 2]}>
+          <cylinderGeometry args={[0.013, 0.013, 0.03, 8]} />
+          <meshStandardMaterial color="#B8B8B8" roughness={0.2} metalness={0.8} />
+        </mesh>
+        {/* Eraser */}
+        <mesh position={[-0.21, 0, 0]} rotation={[0, 0, Math.PI / 2]}>
+          <cylinderGeometry args={[0.011, 0.011, 0.03, 8]} />
+          <meshStandardMaterial color="#E88B8B" roughness={0.7} />
+        </mesh>
+      </group>
     </group>
   );
 }
@@ -642,12 +676,12 @@ function Mug() {
         <cylinderGeometry args={[0.1, 0.08, 0.25, 16]} />
         <meshStandardMaterial color={C.warmWhite} roughness={0.6} />
       </mesh>
-      {/* Handle */}
-      <mesh position={[0.12, 0.15, 0]} rotation={[0, 0, Math.PI / 2]}>
-        <torusGeometry args={[0.06, 0.015, 8, 16, Math.PI]} />
+      {/* Handle — vertical C-shape on the side */}
+      <mesh position={[0.12, 0.15, 0]} rotation={[Math.PI / 2, 0, 0]}>
+        <torusGeometry args={[0.055, 0.015, 8, 16, Math.PI]} />
         <meshStandardMaterial color={C.warmWhite} roughness={0.6} />
       </mesh>
-      {/* Coffee */}
+      {/* Coffee surface */}
       <mesh position={[0, 0.26, 0]} rotation={[-Math.PI / 2, 0, 0]}>
         <circleGeometry args={[0.09, 16]} />
         <meshStandardMaterial color="#5C3D2E" roughness={0.3} />
