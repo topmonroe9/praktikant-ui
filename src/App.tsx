@@ -122,7 +122,7 @@ function Navbar() {
           ))}
           <a
             href="#"
-            className="font-body text-[15px] font-medium text-ivory bg-terracotta px-5 py-2.5 rounded-[4px] hover:bg-terracotta-dark transition-all hover:scale-[1.02] active:scale-[0.98]"
+            className="font-body text-[15px] font-medium text-ink bg-terracotta px-5 py-2.5 rounded-[4px] hover:bg-terracotta-dark transition-all hover:scale-[1.02] active:scale-[0.98]"
           >
             Попробовать бесплатно
           </a>
@@ -156,7 +156,7 @@ function Navbar() {
           ))}
           <a
             href="#"
-            className="font-body font-medium text-ivory bg-terracotta px-5 py-3 rounded-[4px] text-center"
+            className="font-body font-medium text-ink bg-terracotta px-5 py-3 rounded-[4px] text-center"
           >
             Попробовать бесплатно
           </a>
@@ -258,7 +258,7 @@ function Hero() {
             <div className="flex flex-col sm:flex-row items-start gap-4">
               <a
                 href="#"
-                className="inline-flex items-center gap-2.5 font-body font-semibold text-[16px] text-ivory bg-terracotta px-7 py-[14px] rounded-[4px] hover:bg-terracotta-dark transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] hover:shadow-[0_8px_24px_rgba(194,83,58,0.2)]"
+                className="inline-flex items-center gap-2.5 font-body font-semibold text-[16px] text-ink bg-terracotta px-7 py-[14px] rounded-[4px] hover:bg-terracotta-dark transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] hover:shadow-[0_8px_24px_rgba(244,132,95,0.25)]"
               >
                 Попробовать бесплатно
                 <ArrowRight size={17} strokeWidth={2} />
@@ -975,7 +975,7 @@ function PricingSection() {
                 <button
                   className={`w-full py-3.5 rounded-[4px] font-body font-medium text-[15px] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] ${
                     tier.recommended
-                      ? "bg-terracotta text-ivory hover:bg-terracotta-dark hover:shadow-[0_6px_20px_rgba(194,83,58,0.2)]"
+                      ? "bg-terracotta text-ink hover:bg-terracotta-dark hover:shadow-[0_6px_20px_rgba(244,132,95,0.25)]"
                       : "bg-parchment text-ink hover:bg-warm-gray-light"
                   }`}
                 >
@@ -1016,7 +1016,7 @@ function CTASection() {
         <Reveal delay={0.2}>
           <a
             href="#"
-            className="inline-flex items-center gap-2.5 font-body font-semibold text-[16px] text-ivory bg-terracotta px-8 py-[14px] rounded-[4px] hover:bg-terracotta-dark transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] hover:shadow-[0_8px_24px_rgba(194,83,58,0.2)]"
+            className="inline-flex items-center gap-2.5 font-body font-semibold text-[16px] text-ink bg-terracotta px-8 py-[14px] rounded-[4px] hover:bg-terracotta-dark transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] hover:shadow-[0_8px_24px_rgba(244,132,95,0.25)]"
           >
             Попробовать бесплатно
             <ArrowRight size={17} strokeWidth={2} />

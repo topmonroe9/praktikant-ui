@@ -1,42 +1,43 @@
 @import "tailwindcss";
 
 @theme {
-  /* Мила.Практис — Editorial Organic palette */
-  --color-ivory: #FAF7F2;
-  --color-ivory-dark: #F0EBE3;
-  --color-parchment: #E8E2D8;
+  /* Backgrounds */
+  --color-ivory: #FFFFFF;
+  --color-ivory-dark: #F9FAFB;
+  --color-parchment: #E5E7EB;
 
-  --color-ink: #1A1B2F;
-  --color-ink-light: #2D2E45;
-  --color-ink-muted: #6B6D82;
+  /* Text */
+  --color-ink: #1F2937;
+  --color-ink-light: #374151;
+  --color-ink-muted: #6B7280;
 
-  --color-teal: #0D6B5E;
-  --color-teal-dark: #094F46;
-  --color-teal-light: #14917F;
-  --color-teal-subtle: #E6F5F2;
+  /* Primary — Warm Teal */
+  --color-teal: #2A9D8F;
+  --color-teal-dark: #1B7F72;
+  --color-teal-light: #A7DDD6;
+  --color-teal-subtle: #E6F5F3;
 
-  --color-terracotta: #C2533A;
-  --color-terracotta-dark: #9E3F2A;
-  --color-terracotta-light: #E07A5F;
-  --color-terracotta-subtle: #FDF0ED;
+  /* Accent — Soft Coral */
+  --color-terracotta: #F4845F;
+  --color-terracotta-dark: #E06A42;
+  --color-terracotta-light: #F9A88D;
+  --color-terracotta-subtle: #FEF0E8;
 
+  /* Secondary — Warm Indigo (dashboard) */
+  --color-secondary: #5B6ABF;
+
+  /* Nature accent */
   --color-sage: #7A9E7E;
   --color-sage-light: #B5D0B8;
 
-  --color-warm-gray: #9B9AA1;
-  --color-warm-gray-light: #D4D3D8;
+  /* Neutrals */
+  --color-warm-gray: #9CA3AF;
+  --color-warm-gray-light: #D1D5DB;
 
-  --font-display: "Lora", "Georgia", serif;
-  --font-body: "DM Sans", "Segoe UI", sans-serif;
+  /* Typography — Onest single family */
+  --font-display: "Onest", "Segoe UI", sans-serif;
+  --font-body: "Onest", "Segoe UI", sans-serif;
   --font-mono: "JetBrains Mono", "Consolas", monospace;
-}
-
-@font-face {
-  font-family: "Lora";
-  font-style: normal;
-  font-weight: 400 700;
-  font-display: swap;
-  src: url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap");
 }
 
 html {
