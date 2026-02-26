@@ -56,21 +56,14 @@ function Logo({ light = false }: { light?: boolean }) {
   return (
     <a href="#" className="flex items-baseline gap-0 select-none group">
       <span
-        className={`font-display font-bold text-[22px] transition-colors ${
+        className={`font-display font-bold text-[24px] tracking-[-0.02em] transition-colors ${
           light ? "text-ivory" : "text-ink"
         }`}
       >
-        Зоя
+        Такт
       </span>
-      <span className="text-terracotta text-[28px] leading-none relative -top-[3px] mx-[1px] font-bold group-hover:scale-125 transition-transform origin-bottom">
+      <span className="text-terracotta text-[28px] leading-none relative -top-[3px] font-bold group-hover:scale-125 transition-transform origin-bottom">
         .
-      </span>
-      <span
-        className={`font-body font-medium text-[17px] tracking-[-0.01em] transition-colors ${
-          light ? "text-ivory/80" : "text-ink"
-        }`}
-      >
-        Практис
       </span>
     </a>
   );
@@ -486,7 +479,7 @@ function PainSection() {
 }
 
 /* ════════════════════════════════════════════════════════════════
-   Solution — "Как работает Зоя"
+   Solution — "Как работает Такт"
    ════════════════════════════════════════════════════════════════ */
 
 function SolutionSection() {
@@ -529,7 +522,7 @@ function SolutionSection() {
             Продукт
           </p>
           <h2 className="font-display font-semibold text-[34px] lg:text-[48px] leading-[1.12] tracking-[-0.01em] text-ink mb-16 lg:mb-20">
-            Как работает Зоя
+            Как работает Такт
           </h2>
         </Reveal>
 
@@ -1225,7 +1218,7 @@ function Footer() {
 
         <div className="mt-12 pt-8 border-t border-parchment flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
           <span className="font-body text-[12px] text-warm-gray">
-            2026 Зоя.Практис. Все права защищены.
+            2026 Такт. Все права защищены.
           </span>
           <span className="font-mono text-[10px] text-warm-gray-light tracking-[0.04em]">
             Серверы в РФ · ФЗ-152 · Данные не покидают Россию
