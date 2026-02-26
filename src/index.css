@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  /* Зоя.Практис — Editorial Organic palette */
+  --color-ivory: #FAF7F2;
+  --color-ivory-dark: #F0EBE3;
+  --color-parchment: #E8E2D8;
+
+  --color-ink: #1A1B2F;
+  --color-ink-light: #2D2E45;
+  --color-ink-muted: #6B6D82;
+
+  --color-teal: #0D6B5E;
+  --color-teal-dark: #094F46;
+  --color-teal-light: #14917F;
+  --color-teal-subtle: #E6F5F2;
+
+  --color-terracotta: #C2533A;
+  --color-terracotta-dark: #9E3F2A;
+  --color-terracotta-light: #E07A5F;
+  --color-terracotta-subtle: #FDF0ED;
+
+  --color-sage: #7A9E7E;
+  --color-sage-light: #B5D0B8;
+
+  --color-warm-gray: #9B9AA1;
+  --color-warm-gray-light: #D4D3D8;
+
+  --font-display: "Lora", "Georgia", serif;
+  --font-body: "DM Sans", "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "Consolas", monospace;
+}
+
+@font-face {
+  font-family: "Lora";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-ivory);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-teal);
+  color: white;
+}
