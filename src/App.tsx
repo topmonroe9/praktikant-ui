@@ -182,7 +182,6 @@ const professions = [
   "супервизоров",
   "менторов",
   "тьюторов",
-  "нейропсихологов",
 ];
 
 function ProfessionRotator() {
