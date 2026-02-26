@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import {
   Clock, Layers, UserX, Wallet, Shield, Server, Lock,
   CalendarCheck, FileText, CreditCard, BarChart3, MessageCircle,
@@ -198,24 +198,47 @@ function ProfessionRotator() {
   }, [paused]);
 
   return (
-    <div className="flex flex-wrap gap-x-1 gap-y-1 mt-2.5">
-      {professions.map((p, i) => (
-        <span
-          key={p}
-          onMouseEnter={() => {
-            setActive(i);
-            setPaused(true);
-          }}
-          onMouseLeave={() => setPaused(false)}
-          className={`font-body text-[13px] sm:text-[14px] px-2.5 py-[3px] rounded-[4px] transition-all duration-500 cursor-default select-none ${
-            i === active
-              ? "bg-teal/10 text-teal font-medium scale-[1.05]"
-              : "text-warm-gray hover:text-ink-muted"
-          }`}
-        >
-          {p}
+    <div>
+      {/* Tagline with rotating word */}
+      <p className="font-mono text-[12px] text-teal tracking-[0.1em] uppercase flex items-center gap-2.5">
+        <BrandDot size={5} className="bg-teal" />
+        <span>Рабочая среда для</span>
+        <span className="relative inline-flex h-[18px] overflow-hidden">
+          <AnimatePresence mode="popLayout">
+            <motion.span
+              key={professions[active]}
+              initial={{ y: 16, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -16, opacity: 0 }}
+              transition={{ duration: 0.35, ease: [0.25, 0.4, 0.25, 1] }}
+              className="font-mono text-[12px] text-teal font-medium tracking-[0.1em] uppercase whitespace-nowrap"
+            >
+              {professions[active]}
+            </motion.span>
+          </AnimatePresence>
         </span>
-      ))}
+      </p>
+
+      {/* All professions — active one highlighted */}
+      <div className="flex flex-wrap gap-x-1 gap-y-1 mt-2.5">
+        {professions.map((p, i) => (
+          <span
+            key={p}
+            onMouseEnter={() => {
+              setActive(i);
+              setPaused(true);
+            }}
+            onMouseLeave={() => setPaused(false)}
+            className={`font-body text-[13px] sm:text-[14px] px-2.5 py-[3px] rounded-[4px] transition-all duration-500 cursor-default select-none ${
+              i === active
+                ? "bg-teal/10 text-teal font-medium"
+                : "text-warm-gray hover:text-ink-muted"
+            }`}
+          >
+            {p}
+          </span>
+        ))}
+      </div>
     </div>
   );
 }
@@ -273,10 +296,6 @@ function Hero() {
         <div>
           <Reveal>
             <div className="mb-6">
-              <p className="font-mono text-[12px] text-teal tracking-[0.1em] uppercase flex items-center gap-2.5">
-                <BrandDot size={5} className="bg-teal" />
-                Рабочая среда для
-              </p>
               <ProfessionRotator />
             </div>
           </Reveal>
