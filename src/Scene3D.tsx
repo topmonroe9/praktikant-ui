@@ -5,7 +5,6 @@ import {
   RoundedBox,
   Html,
   Float,
-  Text,
 } from "@react-three/drei";
 import * as THREE from "three";
 
@@ -717,17 +716,11 @@ function Envelope() {
         <boxGeometry args={[0.5, 0.002, 0.04]} />
         <meshStandardMaterial color={C.red} roughness={0.8} />
       </mesh>
-      {/* FNS text */}
-      <Text
-        position={[0, 0.006, 0]}
-        fontSize={0.04}
-        color={C.ink}
-        anchorX="center"
-        anchorY="middle"
-        font="https://fonts.gstatic.com/s/onest/v8/w8g5RGY10IF4-0EX.woff2"
-      >
-        ФНС · Мой налог
-      </Text>
+      {/* FNS label */}
+      <mesh position={[0, 0.004, 0.05]}>
+        <boxGeometry args={[0.2, 0.002, 0.04]} />
+        <meshStandardMaterial color={C.blue} roughness={0.8} />
+      </mesh>
     </group>
   );
 }
@@ -744,18 +737,11 @@ function ClientFolder() {
         <boxGeometry args={[0.15, 0.02, 0.04]} />
         <meshStandardMaterial color="#D4A86A" roughness={0.8} />
       </mesh>
-      {/* Label */}
-      <Text
-        position={[0, 0.033, -0.1]}
-        fontSize={0.04}
-        color={C.ink}
-        anchorX="center"
-        anchorY="middle"
-        rotation={[-Math.PI / 2, 0, 0]}
-        font="https://fonts.gstatic.com/s/onest/v8/w8g5RGY10IF4-0EX.woff2"
-      >
-        Клиенты
-      </Text>
+      {/* Label strip */}
+      <mesh position={[0, 0.033, -0.1]} rotation={[-Math.PI / 2, 0, 0]}>
+        <boxGeometry args={[0.25, 0.05, 0.002]} />
+        <meshStandardMaterial color={C.ink} roughness={0.8} opacity={0.3} transparent />
+      </mesh>
     </group>
   );
 }
