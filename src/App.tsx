@@ -506,6 +506,12 @@ function FeaturesSection() {
       priority: "must",
     },
     {
+      icon: Video,
+      title: "Свои видеозвонки — замена Zoom",
+      desc: "Встроенная видеосвязь прямо в&nbsp;платформе. Запись сессий, демонстрация экрана, HD-качество. Не&nbsp;нужно оплачивать Zoom — и&nbsp;не&nbsp;нужно отправлять отдельную ссылку.",
+      priority: "must",
+    },
+    {
       icon: FileText,
       title: "Всё о клиенте — в одной карточке",
       desc: "История сессий, заметки, теги, контакты. Без Excel-таблиц и&nbsp;фотографий блокнота.",
@@ -530,12 +536,6 @@ function FeaturesSection() {
       priority: "must",
     },
     {
-      icon: Video,
-      title: "Видеозвонок в один клик",
-      desc: "Встроенная ссылка на видеосвязь при записи. Не&nbsp;нужно отдельно отправлять ссылку на Zoom.",
-      priority: "must",
-    },
-    {
       icon: BarChart3,
       title: "Знайте сколько зарабатываете",
       desc: "Доход, загрузка, количество сессий, лимит самозанятого. P&L вашей практики — без таблиц.",
@@ -549,9 +549,9 @@ function FeaturesSection() {
     },
   ];
 
-  // First 2 features are larger, rest are regular grid
-  const featured = features.slice(0, 2);
-  const rest = features.slice(2);
+  // First 3 features are larger (scheduling, video, CRM), rest are regular grid
+  const featured = features.slice(0, 3);
+  const rest = features.slice(3);
 
   return (
     <section id="features" className="py-24 lg:py-32 bg-teal-subtle/30">
@@ -570,8 +570,8 @@ function FeaturesSection() {
           </p>
         </Reveal>
 
-        {/* Top 2 features — larger */}
-        <div className="grid md:grid-cols-2 gap-5 mb-5">
+        {/* Top 3 features — larger */}
+        <div className="grid md:grid-cols-3 gap-5 mb-5">
           {featured.map((f, i) => (
             <Reveal key={i} delay={i * 0.1}>
               <div className="border border-teal/15 bg-white/60 rounded-[5px] p-7 lg:p-8 h-full group hover:border-teal/30 transition-all duration-300">
@@ -654,7 +654,7 @@ function ForWhomSection() {
     },
     {
       icon: Apple,
-      title: "Нутрициологи, тарологи, репетиторы",
+      title: "Нутрициологи, репетиторы и другие",
       label: "",
       desc: "Любой специалист, который работает с клиентами один на один. Шаблоны настраиваются под вашу специальность.",
       accent: "sage",
@@ -735,6 +735,12 @@ function ComparisonSection() {
       them: "Telegram + Calendar + Zoom + Сбер",
       weak: "Ничего не связано, ручная работа",
       us: "Всё в одном месте, автоматически",
+    },
+    {
+      label: "Zoom / Meet",
+      them: "Видеозвонки отдельно",
+      weak: "Отдельная подписка, отдельная ссылка, нет записи сессий",
+      us: "Свои видеозвонки встроены — запись, демонстрация экрана, без доплат",
     },
     {
       label: "Планёрка",
